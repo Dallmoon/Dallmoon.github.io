@@ -1,27 +1,30 @@
-import App from './App';
+// import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render(e(<App />), document.getElementById('root'));
 
-// const e = React.createElement;
+const e = React.createElement;
 
-// class LikeButton extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = { liked: false };
-//   }
 
-//   render() {
-//     if (this.state.liked) {
-//       return 'You liked this.';
-//     }
+class LikeButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { liked: false };
+  }
 
-//     return e(
-//       'button',
-//       { onClick: () => this.setState({ liked: true }) },
-//       'Like'
-//     );
-//   }
-// }
+  render() {
+    if (this.state.liked) {
+      return 'You liked this.';
+    }
 
-// const domContainer = document.querySelector('#like_button_container');
-// ReactDOM.render(e(LikeButton), domContainer);
+    return e(
+      'button',
+      { onClick: () => this.setState({ liked: true }) },
+      'Like'
+    );
+  }
+}
+
+const domContainer = document.querySelector('#root');
+ReactDOM.render(e(LikeButton), domContainer);
+
+export default LikeButton;
